@@ -3,32 +3,16 @@ public class Main {
   public static void main(String[] args) {
 
   Counter<Apple> appleCounter = new Counter<>();
+  RedAppleCounter<Apple> redAppleCounter = new RedAppleCounter<>();
 
-  appleCounter.add(new Apple());
-  appleCounter.add(new Apple());
+  appleCounter.add(new Apple("Red"));
+  appleCounter.add(new Apple("Green"));
 
-  Box<Apple> boxOfApples = new Box<>();
-  Box<Pear> boxOfPears = new Box<>();
-
-  Cart<Box> cartOfBoxes = new Cart<>();
-
-  boxOfApples.getList().add(new Apple());
-  boxOfApples.getList().add(new Apple());
-  boxOfApples.getList().add(new Apple());
-
-  boxOfPears.getList().add(new Pear());
-  boxOfPears.getList().add(new Pear());
-  boxOfPears.getList().add(new Pear());
-  boxOfPears.getList().add(new Pear());
-
-  cartOfBoxes.getList().add(boxOfApples);
-  cartOfBoxes.getList().add(boxOfPears);
+  redAppleCounter.add(new Apple("Red"));
+  redAppleCounter.add(new Apple("Blue"));
 
 
-  System.out.println(appleCounter.getCount());
-  System.out.println(boxOfApples.getCount());
-  System.out.println(cartOfBoxes.getCount());
-
-
+  System.out.println("Apple Counter:" + appleCounter.getCount());
+  System.out.println("Red Apple Counter:" + redAppleCounter.getCount());
   }
 }

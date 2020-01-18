@@ -12,8 +12,13 @@ public class Counter <T> {
     this.count.add(item);
   }
 
+
   int getCount () {
-    return this.count.size();
+    int sum = 0;
+    for (T t:count) {
+    sum++;
+    }
+    return sum;
   }
 
 
